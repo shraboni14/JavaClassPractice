@@ -3,14 +3,17 @@ public class Vowel {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter an Alphabet : ");
-        char input = sc.next().charAt(0);
+        System.out.println("Enter an String : ");
+        String input = sc.nextLine().toLowerCase();
 
-        if((input == 'a'||input == 'A')|| (input == 'e'||input == 'E')||(input == 'i'||input == 'I')||(input == 'o'||input == 'O')||(input == 'u'||input == 'U')){
-            System.out.println("The character is vowel");
+        int count =0; // This variable count by increasing it's value when it'll get vowels.
+
+        for (int i = 0; i < input.length(); i++){ // i will traverse from start to end all indexes of the string
+            char ch = input.charAt(i); // if it find a character in i-th index then count will be increased
+            if(ch == 'a'|| ch == 'e'|| ch == 'i' || ch == 'o' || ch=='u' ){
+                count ++;
+            }
         }
-        else {
-            System.out.println("The character is consonant");
-        }
+        System.out.println("Number of vowel is : " + count);
     }
 }
